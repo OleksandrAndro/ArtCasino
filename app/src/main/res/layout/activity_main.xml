@@ -17,20 +17,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
     <TextView
         android:id="@+id/balanceText"
         android:layout_width="187dp"
         android:layout_height="32dp"
-        android:layout_marginStart="272dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/bacground_items"
         android:gravity="center_horizontal"
         android:text="TextView"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageLevel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -48,13 +53,13 @@
         android:id="@+id/levelText"
         android:layout_width="187dp"
         android:layout_height="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="276dp"
         android:background="@drawable/bacground_items"
         android:gravity="top|center_horizontal"
         android:text="TextView"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
