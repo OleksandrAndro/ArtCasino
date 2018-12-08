@@ -8,9 +8,11 @@ import android.widget.ImageView;
 
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
+    private Integer[] mThumbIds;
 
-    public ImageAdapter(Context c) {
+    public ImageAdapter(Context c, Integer[] thumbsId) {
         mContext = c;
+        mThumbIds = thumbsId;
     }
 
     public int getCount() {
@@ -41,11 +43,4 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setImageResource(mThumbIds[position]);
         return imageView;
     }
-
-    // references to our images
-    private Integer[] mThumbIds = {
-            R.drawable.game_button1, R.drawable.game_button2,
-            R.drawable.game_button3, R.drawable.game_button4,
-            R.drawable.game_button5, R.drawable.game_button6
-    };
 }

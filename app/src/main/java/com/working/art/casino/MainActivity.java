@@ -49,8 +49,14 @@ public class MainActivity extends Activity {
 
         }
 
+        Integer[] ThumbIds = {
+                R.drawable.game_button1, R.drawable.game_button2,
+                R.drawable.game_button3, R.drawable.game_button4,
+                R.drawable.game_button5, R.drawable.game_button6
+        };
+
         GridView gridview = findViewById(R.id.listOfGames);
-        imageAdapter = new ImageAdapter(MainActivity.this);
+        imageAdapter = new ImageAdapter(MainActivity.this, ThumbIds);
         gridview.setAdapter(imageAdapter);
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
