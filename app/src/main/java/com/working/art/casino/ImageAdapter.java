@@ -33,6 +33,7 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
+            imageView.setAdjustViewBounds(true);
             //imageView.setLayoutParams(new ViewGroup.LayoutParams(85, 85));
           //imageView.setScaleType(ImageView.ScaleType.MATRIX);
             //imageView.setPadding(8, 8, 8, 8);
