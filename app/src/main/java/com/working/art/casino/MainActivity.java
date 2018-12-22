@@ -2,6 +2,7 @@ package com.working.art.casino;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +18,11 @@ public class MainActivity extends Activity {
     TextView playBalance, playLevel;
     ImageAdapter imageAdapter;
     SharedPreferences sharedpreferences;
-    int lowPartBalance, mediumPartBalance, highPartBalance, level;
+    int balance, level;
     public static final String mypreference = "mypref";
-    public static final String LowBalKey = "lowBalKey";
-    public static final String MediumBalKey = "medBalKey";
-    public static final String HighBalKey = "highBalKey";
+    public static final String BalKey = "BalKey";
+   /* public static final String MediumBalKey = "medBalKey";
+    public static final String HighBalKey = "highBalKey";*/
     public static final String Level = "levelKey";
 
     @Override
@@ -32,26 +33,21 @@ public class MainActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        playBalance = findViewById(R.id.balanceText);
-        playLevel = findViewById(R.id.levelText);
+        playBalance = findViewById(R.id.playBalance);
+        playLevel = findViewById(R.id.playLevel);
 
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
-        if((sharedpreferences.contains(LowBalKey)) & (sharedpreferences.contains(MediumBalKey)) & (sharedpreferences.contains(Level)) & (sharedpreferences.contains(HighBalKey))){
+        if((sharedpreferences.contains(BalKey)) & (sharedpreferences.contains(Level))){
 
-            mediumPartBalance = sharedpreferences.getInt(MediumBalKey, 137);
-            lowPartBalance = sharedpreferences.getInt(LowBalKey, 10);
-            highPartBalance = sharedpreferences.getInt(HighBalKey, 2);
+            balance = sharedpreferences.getInt(BalKey, 213710);
             level = sharedpreferences.getInt(Level, 1);
             SetFields();
 
         }
         else {
-            mediumPartBalance = 137;
-            lowPartBalance = 10;
-            highPartBalance = 2;
+            balance = 213710;
             level = 1;
             SetFields();
-
         }
 
         Integer[] ThumbIds = {
@@ -60,6 +56,8 @@ public class MainActivity extends Activity {
                 R.drawable.game_button5, R.drawable.game_button6
         };
 
+
+
         GridView gridview = findViewById(R.id.listOfGames);
         imageAdapter = new ImageAdapter(MainActivity.this, ThumbIds);
         gridview.setAdapter(imageAdapter);
@@ -67,6 +65,13 @@ public class MainActivity extends Activity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
+                switch (position){
+
+                    case 0:
+                        Intent intent = new Intent(MainActivity.this, Game1.class);
+                        startActivity(intent);
+
+                }
                 Toast.makeText(MainActivity.this, "" + position,
                         Toast.LENGTH_SHORT).show();
             }
@@ -75,11 +80,11 @@ public class MainActivity extends Activity {
 
     }
 
+
+
     public void SaveToPref() {
         SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putInt(LowBalKey, lowPartBalance);
-        editor.putInt(MediumBalKey, mediumPartBalance);
-        editor.putInt(HighBalKey, highPartBalance);
+        editor.putInt(BalKey, balance);
         editor.putInt(Level, level);
         editor.commit();
     }
@@ -88,11 +93,7 @@ public class MainActivity extends Activity {
     protected void onStart() {
         super.onStart();
         level++;
-        if(lowPartBalance < 100)
-            lowPartBalance++;
-        else
-            lowPartBalance = 1;
-            mediumPartBalance = 138;
+            balance++;
     }
 
     @Override
@@ -102,7 +103,12 @@ public class MainActivity extends Activity {
     }
 
     public void SetFields(){
-        playBalance.setText(highPartBalance + "." + mediumPartBalance +"."+ lowPartBalance);
+        int hightBal = balance/100000;
+        int medBal = balance/100%1000;
+        int lowBal = balance%100;
+        playBalance.setText(String.format("%5d", balance));
         playLevel.setText("Level" + " " + level);
     }
+
+
 }
