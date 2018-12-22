@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class Game1 extends AppCompatActivity {
     TextView win, level_bet, playBalance, playLevel;
     SharedPreferences sharedpreferences;
     int balance, level, betLevel=1, winLevel;
+    boolean startCycleGame = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +87,22 @@ public class Game1 extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mixWheel(R.id.slot_1);
-                mixWheel(R.id.slot_2);
-                mixWheel(R.id.slot_3);
-                mixWheel(R.id.slot_4);
-                mixWheel(R.id.slot_5);
-
+                startCycleGame = false;
+                startGame();
             }
+        });
+
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                    startCycleGame = true;
+                    startGame();
+
+                    Toast.makeText(getApplicationContext(), "Auto Spin enabled, click to disable ",
+                            Toast.LENGTH_LONG).show();
+                    return true;
+                }
         });
 
        // level_bet.setText(String.format("%5d",betLevel));
@@ -131,6 +142,16 @@ public class Game1 extends AppCompatActivity {
                winLevel = 0;
            }
         SetFields();
+    }
+
+    public void startGame(){
+
+            mixWheel(R.id.slot_1);
+            mixWheel(R.id.slot_2);
+            mixWheel(R.id.slot_3);
+            mixWheel(R.id.slot_4);
+            mixWheel(R.id.slot_5);
+
     }
 
     public void SetFields(){
@@ -215,6 +236,8 @@ public class Game1 extends AppCompatActivity {
         public void onScrollingFinished(WheelView wheel) {
             wheelScrolled = false;
             updateBalance();
+            if(startCycleGame)
+            startGame();
             //SetFields();
         }
     };
