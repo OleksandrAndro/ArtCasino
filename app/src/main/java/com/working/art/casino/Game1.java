@@ -36,7 +36,7 @@ public class Game1 extends AppCompatActivity {
     SharedPreferences sharedpreferences;
     int balance, level, betLevel=1, winLevel;
     boolean startCycleGame = false;
-
+    float xdpi, ydpi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,13 +59,21 @@ public class Game1 extends AppCompatActivity {
         bet_plus.bringToFront();
         bet_minus.bringToFront();
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int density = displayMetrics.densityDpi;
+        int heightPixels = displayMetrics.heightPixels;
+        int weightPixels = displayMetrics.widthPixels;
+        xdpi = displayMetrics.xdpi;
+        ydpi = displayMetrics.ydpi;
+        int xdpi1 = Math.round(weightPixels/density);
+        int ydpi1 = Math.round(heightPixels/density);
+
         initWheel(R.id.slot_1);
         initWheel(R.id.slot_2);
         initWheel(R.id.slot_3);
         initWheel(R.id.slot_4);
         initWheel(R.id.slot_5);
-
-       // TextView textView = findViewById(R.id.levelBet);
 
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
         if((sharedpreferences.contains(BalKey)) & (sharedpreferences.contains(Level))){
@@ -105,7 +113,8 @@ public class Game1 extends AppCompatActivity {
                 }
         });
 
-       // level_bet.setText(String.format("%5d",betLevel));
+       level_bet.setText(String.format("%5d",betLevel));
+
     }
 
     private void updateBalance(){
@@ -305,7 +314,7 @@ public class Game1 extends AppCompatActivity {
 
         private Bitmap loadImage(int id) {
             Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), id);
-            Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 150, 150, true);
+            Bitmap scaled = Bitmap.createScaledBitmap(bitmap, (int)xdpi/2, (int)ydpi/2, true);
             bitmap.recycle();
             return scaled;
         }

@@ -21,8 +21,6 @@ public class MainActivity extends Activity {
     int balance, level;
     public static final String mypreference = "mypref";
     public static final String BalKey = "BalKey";
-   /* public static final String MediumBalKey = "medBalKey";
-    public static final String HighBalKey = "highBalKey";*/
     public static final String Level = "levelKey";
 
     @Override
@@ -70,6 +68,31 @@ public class MainActivity extends Activity {
                     case 0:
                         Intent intent = new Intent(MainActivity.this, Game1.class);
                         startActivity(intent);
+                        break;
+                    case 1:
+                        Intent intent1 = new Intent(MainActivity.this, Game1.class);
+                        startActivity(intent1);
+                        break;
+
+                    case 2:
+                        Intent intent2 = new Intent(MainActivity.this, Game1.class);
+                        startActivity(intent2);
+                        break;
+
+                    case 3:
+                        Intent intent3 = new Intent(MainActivity.this, Game1.class);
+                        startActivity(intent3);
+                        break;
+
+                    case 4:
+                        Intent intent4 = new Intent(MainActivity.this, Game1.class);
+                        startActivity(intent4);
+                        break;
+
+                    case 5:
+                        Intent intent5 = new Intent(MainActivity.this, Game1.class);
+                        startActivity(intent5);
+                        break;
 
                 }
                 Toast.makeText(MainActivity.this, "" + position,

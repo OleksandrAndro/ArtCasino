@@ -137,7 +137,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/bacground_items"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bet_plus"
         app:layout_constraintStart_toEndOf="@+id/bet_minus" />
@@ -165,7 +165,7 @@
         app:srcCompat="@drawable/plus_button" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="50dp"
