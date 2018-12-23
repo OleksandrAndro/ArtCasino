@@ -95,8 +95,8 @@ public class MainActivity extends Activity {
                         break;
 
                 }
-                Toast.makeText(MainActivity.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(MainActivity.this, "" + position,
+                        Toast.LENGTH_SHORT).show();*/
             }
         });
 
