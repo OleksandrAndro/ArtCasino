@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -27,7 +28,6 @@ import kankan.wheel.widget.adapters.AbstractWheelAdapter;
 
 import static com.working.art.casino.MainActivity.BalKey;
 import static com.working.art.casino.MainActivity.Level;
-import static com.working.art.casino.MainActivity.mypreference;
 
 public class Game1 extends AppCompatActivity {
 
@@ -59,6 +59,19 @@ public class Game1 extends AppCompatActivity {
         bet_plus.bringToFront();
         bet_minus.bringToFront();
 
+        sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        if((sharedpreferences.contains(BalKey)) & (sharedpreferences.contains(Level))){
+
+            balance = sharedpreferences.getInt(BalKey, 2130);
+            level = sharedpreferences.getInt(Level, 1);
+            SetFields();
+        }
+        else {
+            balance = 213;
+            level = 1;
+            SetFields();
+        }
+
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int density = displayMetrics.densityDpi;
@@ -75,18 +88,7 @@ public class Game1 extends AppCompatActivity {
         initWheel(R.id.slot_4);
         initWheel(R.id.slot_5);
 
-        sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
-        if((sharedpreferences.contains(BalKey)) & (sharedpreferences.contains(Level))){
 
-            balance = sharedpreferences.getInt(BalKey, 213710);
-            level = sharedpreferences.getInt(Level, 1);
-            SetFields();
-        }
-        else {
-            balance = 213710;
-            level = 1;
-            SetFields();
-        }
 
 
         Button button = findViewById(R.id.button);
@@ -150,7 +152,6 @@ public class Game1 extends AppCompatActivity {
            balance = balance - (betLevel*5);
                winLevel = 0;
            }
-        SetFields();
     }
 
     public void startGame(){
@@ -182,7 +183,7 @@ public class Game1 extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        SaveToPref();
+        //SaveToPref();
     }
 
     public void onClick(View v){
@@ -247,7 +248,8 @@ public class Game1 extends AppCompatActivity {
             updateBalance();
             if(startCycleGame)
             startGame();
-            //SetFields();
+            SetFields();
+            SaveToPref();
         }
     };
 

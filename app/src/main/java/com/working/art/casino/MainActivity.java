@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -34,7 +35,7 @@ public class MainActivity extends Activity {
         playBalance = findViewById(R.id.playBalance);
         playLevel = findViewById(R.id.playLevel);
 
-        sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
+        sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         if((sharedpreferences.contains(BalKey)) & (sharedpreferences.contains(Level))){
 
             balance = sharedpreferences.getInt(BalKey, 213710);
@@ -109,14 +110,23 @@ public class MainActivity extends Activity {
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putInt(BalKey, balance);
         editor.putInt(Level, level);
-        editor.commit();
+        editor.apply();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        level++;
-            balance++;
+        //level++;
+            //balance++;
+        SetFields();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        balance = sharedpreferences.getInt(BalKey, 213710);
+        level = sharedpreferences.getInt(Level, 1);
+        SetFields();
     }
 
     @Override
