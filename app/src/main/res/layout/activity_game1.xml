@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".Game1">
+    tools:context="com.efexcas.nefr.Game1">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -146,8 +146,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/bacground_items"
-        android:gravity="center_horizontal"
-        android:paddingRight="15dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingRight="20dp"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bet_plus"

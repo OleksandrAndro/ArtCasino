@@ -1,7 +1,6 @@
-package com.working.art.casino;
+package com.efexcas.nefr;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,15 +12,8 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.core.CoreActivity;
-import com.core.CoreApp;
-
-import static com.core.CoreActivity.INTENT_ADDRESS;
-import static com.core.CoreActivity.INTENT_CLASS;
-import static com.core.CoreActivity.INTENT_COLOR;
-import static com.core.CoreActivity.INTENT_DRAWABLE;
+import com.efexcas.nefr.R;
 
 
 public class MainActivity extends Activity {

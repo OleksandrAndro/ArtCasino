@@ -1,4 +1,4 @@
-package com.working.art.casino;
+package com.efexcas.nefr;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,6 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -18,17 +17,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.efexcas.nefr.R;
+
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import kankan.wheel.widget.OnWheelChangedListener;
 import kankan.wheel.widget.OnWheelScrollListener;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.adapters.AbstractWheelAdapter;
 
-import static com.working.art.casino.MainActivity.BalKey;
-import static com.working.art.casino.MainActivity.Level;
+import static com.efexcas.nefr.MainActivity.BalKey;
+import static com.efexcas.nefr.MainActivity.Level;
 
 public class Game1 extends AppCompatActivity {
 
@@ -116,7 +116,7 @@ public class Game1 extends AppCompatActivity {
                 }
         });
 
-       level_bet.setText(String.format("%5d",betLevel));
+        level_bet.setText(String.format("%5d",betLevel));
 
     }
 
@@ -170,7 +170,7 @@ public class Game1 extends AppCompatActivity {
         int medBal = balance/100%1000;
         int lowBal = balance%100;
         playBalance.setText(String.format("%5d", balance));
-        playLevel.setText("Level" + " " + level);
+        //playLevel.setText("Level" + " " + level);
         win.setText(String.format("%5d", winLevel));
     }
 

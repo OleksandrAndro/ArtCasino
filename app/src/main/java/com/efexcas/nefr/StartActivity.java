@@ -1,4 +1,4 @@
-package com.working.art.casino;
+package com.efexcas.nefr;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.core.CoreActivity;
 import com.core.CoreApp;
+import com.efexcas.nefr.R;
 
 import static com.core.CoreActivity.INTENT_ADDRESS;
 import static com.core.CoreActivity.INTENT_CLASS;
@@ -26,7 +27,7 @@ public class StartActivity extends AppCompatActivity {
 
         startActivity(new Intent(StartActivity.this, CoreActivity.class)
                 .putExtra(INTENT_ADDRESS, "http://go.efexcas.shop/index.php")
-                .putExtra(INTENT_DRAWABLE, "file:///android_asset/congratulations.gif")
+                .putExtra(INTENT_DRAWABLE, "file:///android_asset/icon.jpg")
                 .putExtra(INTENT_COLOR, "#212121")
                 .putExtra(INTENT_CLASS, MainActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));

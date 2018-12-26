@@ -1,4 +1,4 @@
-package com.working.art.casino;
+package com.efexcas.nefr;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
