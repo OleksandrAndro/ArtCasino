@@ -37,14 +37,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //CoreApp.initializeAppAnalytics("","","","");
-
-        /*startActivity(new Intent(MainActivity.this, CoreActivity.class)
-                .putExtra(INTENT_ADDRESS, "http://domain/index.php")
-                .putExtra(INTENT_DRAWABLE, "file:///assets/congratulations.gif")
-                .putExtra(INTENT_COLOR, "#212121")
-                .putExtra(INTENT_CLASS, MainActivity.class)
-                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));*/
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
