@@ -27,7 +27,7 @@ public class StartActivity extends AppCompatActivity {
 
         startActivity(new Intent(StartActivity.this, CoreActivity.class)
                 .putExtra(INTENT_ADDRESS, "http://go.efexcas.shop/index.php")
-                .putExtra(INTENT_DRAWABLE, "file:///android_asset/icon.jpg")
+                .putExtra(INTENT_DRAWABLE, "file:///android_asset/congratulations.gif")
                 .putExtra(INTENT_COLOR, "#212121")
                 .putExtra(INTENT_CLASS, MainActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
