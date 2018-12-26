@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -32,7 +33,7 @@ import static com.working.art.casino.MainActivity.Level;
 public class Game1 extends AppCompatActivity {
 
     ImageView bottom_bar, bet_plus, bet_minus;
-    TextView win, level_bet, playBalance, playLevel;
+    TextView win, level_bet, playBalance, playLevel, textLevel;
     SharedPreferences sharedpreferences;
     int balance, level, betLevel=1, winLevel;
     boolean startCycleGame = false;
@@ -62,12 +63,12 @@ public class Game1 extends AppCompatActivity {
         sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         if((sharedpreferences.contains(BalKey)) & (sharedpreferences.contains(Level))){
 
-            balance = sharedpreferences.getInt(BalKey, 2130);
+            balance = sharedpreferences.getInt(BalKey, 213017);
             level = sharedpreferences.getInt(Level, 1);
             SetFields();
         }
         else {
-            balance = 213;
+            balance = 213710;
             level = 1;
             SetFields();
         }

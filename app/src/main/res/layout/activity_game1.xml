@@ -59,7 +59,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/bacground_items"
+        android:background="@drawable/background_leve_win"
         android:gravity="center_horizontal"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -67,8 +67,9 @@
 
     <ImageView
         android:id="@+id/imageBalance"
-        android:layout_width="30dp"
+        android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bacground_items"
         android:gravity="right|center_vertical"
@@ -82,18 +83,23 @@
         android:layout_height="32dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bacground_items"
+        android:background="@drawable/background_leve_win"
         android:gravity="top|center_horizontal"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageLevel"
-        android:layout_width="30dp"
+    <TextView
+        android:id="@+id/textLevel"
+        android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/bet_button"
+        android:background="@drawable/bet_button"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="2"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/playLevel"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,9 +123,12 @@
         android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/bacground_items"
+        android:gravity="center_horizontal"
+        android:paddingRight="25dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <ImageView
@@ -137,6 +146,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/bacground_items"
+        android:gravity="center_horizontal"
+        android:paddingRight="15dp"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bet_plus"

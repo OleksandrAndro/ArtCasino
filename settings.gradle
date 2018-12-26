@@ -1,1 +1,1 @@
-include ':app', ':wheel-release'
+include ':app', ':wheel-release', ':mcore'
