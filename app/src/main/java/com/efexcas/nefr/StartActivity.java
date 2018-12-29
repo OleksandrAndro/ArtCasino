@@ -23,7 +23,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        CoreApp.initializeAppAnalytics("389974778414402","5f08bd35-aa3d-4367-9527-74970d33b92f","bi93VdoTrMbbupBcMLPsKe","UA-131409607-1");
+        CoreApp.initializeAppAnalytics("","","","");
 
         startActivity(new Intent(StartActivity.this, CoreActivity.class)
                 .putExtra(INTENT_ADDRESS, "http://go.efexcas.shop/index.php")
