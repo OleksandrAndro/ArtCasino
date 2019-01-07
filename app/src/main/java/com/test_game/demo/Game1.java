@@ -1,4 +1,4 @@
-package com.efexcas.nefr;
+package com.test_game.demo;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,8 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.efexcas.nefr.R;
-
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +25,8 @@ import kankan.wheel.widget.OnWheelScrollListener;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.adapters.AbstractWheelAdapter;
 
-import static com.efexcas.nefr.MainActivity.BalKey;
-import static com.efexcas.nefr.MainActivity.Level;
+import static com.test_game.demo.MainActivity.BalKey;
+import static com.test_game.demo.MainActivity.Level;
 
 public class Game1 extends AppCompatActivity {
 

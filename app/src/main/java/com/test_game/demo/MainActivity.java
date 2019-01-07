@@ -1,4 +1,4 @@
-package com.efexcas.nefr;
+package com.test_game.demo;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,8 +12,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-
-import com.efexcas.nefr.R;
 
 
 public class MainActivity extends Activity {
